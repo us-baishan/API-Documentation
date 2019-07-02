@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "be53618e-f7bd-425d-9c5d-e73fea894dfb",
+		"name": "2.Domain Operation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "View Domain List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/domain/list?token=[token]&page_number=1&page_size=100&domain_status=serving",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"domain",
+						"list"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "page_number",
+							"value": "1",
+							"description": "Page number. The default is 1."
+						},
+						{
+							"key": "page_size",
+							"value": "100",
+							"description": "Number of pages. Select from range 1-500. The default is 100."
+						},
+						{
+							"key": "domain_status",
+							"value": "serving",
+							"description": "Domain types separated by commas. Options are deleted, suspend, serving.. For example, domain_status=suspend, serving. If the parameter is not specified, domains of all types are returned. Note that when looking for domain_status=serving, the response could be “deploying”, which means the domain name’s configuration is currently being deployed. deleted, suspend, serving domain_status=suspend,serving"
+						}
+					]
+				},
+				"description": "Look up domain name list and return the basic information of domain names.\n\nNotice: See the Response Header for the frequency limit."
+			},
+			"response": []
+		},
+		{
+			"name": "Domain Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/domain?token=[token]&domains=aa.qingcdn.com",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"domain"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domains",
+							"value": "aa.qingcdn.com",
+							"description": "Mutiple domain names (non-live streaming configuration) can be imported for query, separated by commas (,). Up to 10 domain names at a time.ie. aa.qingcdn.com, bb.qingcdn.com.This parameter also supports imported Domain ID"
+						}
+					]
+				},
+				"description": "Request domain name details including Domain name ID, CNAME, Type of acceleration service, service status and basic configuration information, etc.\n\nNotice: See the Response Header for the frequency limit. Cannot request more than 60 times per minute."
+			},
+			"response": []
+		},
+		{
+			"name": "Domain Creation",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "920a548a-b936-4b63-bbb5-ff2c18e1bf69",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"domain\":\"aa.1.qingcdn.com\",\n    \"type\":\"page\",\n    \"config\":{\n        \"origin\":{\n            \"default_master\":\"1.1.1.1\"\n        }\n    }\n}"
+				},
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/domain?token=[token]",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"domain"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domain",
+							"value": "",
+							"description": "The domain name that needs to be created, such as www.abc.com.",
+							"disabled": true
+						},
+						{
+							"key": "type",
+							"value": "",
+							"description": "Domain name type, optional values arepage, download, video_demand, dynamic.",
+							"disabled": true
+						},
+						{
+							"key": "config",
+							"value": "",
+							"description": "Specify theparameter &change. Creating domain name only supports origin and origin_host configuration. See Modify Configuration.",
+							"disabled": true
+						},
+						{
+							"key": "default_master",
+							"value": "",
+							"description": "Default origin. Can provide up to 6 IPs or domain names, separated by a comma (,). For example, \"133.233.133.33,133.233.22.33\".",
+							"disabled": true
+						},
+						{
+							"key": "default_slave",
+							"value": "",
+							"description": "Backup origin. Can provide up to 6 IPs or domain names, separated by a comma (,). For example, \"133.233.133.33,133.233.22.33\". Backup origins MUST be different from the default origins.",
+							"disabled": true
+						},
+						{
+							"key": "origin_mode",
+							"value": "",
+							"description": "Select the protocol Baishan servers should use to contact the origin with. The values can be:http,https,default,custom \norigin_mode=http: forward requests to the origins via HTTP and port 80. \norigin_mode=https:foward requests to the origins via HTTPS and port 443. \norigin_mode=default:forward requests to the origins via the same protocol as the end user's request. \norigin_mode=custom:Customize ori_https and port number.",
+							"disabled": true
+						},
+						{
+							"key": "ori_https",
+							"value": "",
+							"description": "Specify whether HTTPS should be used when contacting the origin. The options are yes,no.Can only be used when origin_mode=custom. .",
+							"disabled": true
+						},
+						{
+							"key": "port",
+							"value": "",
+							"description": "Specify the port number to use when contacting the origin. Default is port 80. Can only be used when origin_mode=custom. . (0- 65535)",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Create a domain name.\n\nNotice: Creating a domain name currently only supports origin and origin host configurations."
+			},
+			"response": []
+		},
+		{
+			"name": "Domain Deletion",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/domain?token=[token]&domains=aa.qingcdn.com",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"domain"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domains",
+							"value": "aa.qingcdn.com",
+							"description": "Able to import both domain id and domain name. ie.www.a.com,www.b.com and 112,332"
+						}
+					]
+				},
+				"description": "Delete a domain name."
+			},
+			"response": []
+		},
+		{
+			"name": "Enable Domain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/domain/enable?token=[token]&domain=aa.qingcdn.com",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"domain",
+						"enable"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domain",
+							"value": "aa.qingcdn.com",
+							"description": "Mutiple domain names (non-live streaming configuration) can be imported for query, separated by commas (,). Up to 10 domain names at a time. ie. aa.qingcdn.com,bb.qingcdn.com. This parameter also supports imported Domain ID"
+						}
+					]
+				},
+				"description": "Active/Deactivate domain name. Change domain name to deploying."
+			},
+			"response": []
+		},
+		{
+			"name": "Disable Domain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/domain/disable?token=[token]&domain=aa.qingcdn.com",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"domain",
+						"disable"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domain",
+							"value": "aa.qingcdn.com",
+							"description": "Domain names. Separate domain names by a comma (,). Up to 10 domain names at a time. For example, aa.qingcdn.com,bb.qingcdn.com. The values can also be domain IDs, such as 111,222."
+						}
+					]
+				},
+				"description": "Disable/suspend the use of the domain name and its configuration on BaishanCloud."
+			},
+			"response": []
+		},
+		{
+			"name": "Content Synchronization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/domain/sync?token=[token]&version=0",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"domain",
+						"sync"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "version",
+							"value": "0",
+							"description": "When syncing for the first time, set version to 0. The response will include a last_version value,which can be used as version in future sync requests."
+						}
+					]
+				},
+				"description": "When content is updated, removed, or added to a domain (origin), the CDN platform also needs to be synchronized with the newest content. Sync Domain Content API provides a highly efficient way to do so. This document introduces two methods, 1) proactive pull and 2) purge."
+			},
+			"response": []
+		}
+	]
+}

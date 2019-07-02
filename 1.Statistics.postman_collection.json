@@ -1,0 +1,546 @@
+{
+	"info": {
+		"_postman_id": "70f85e54-f69c-4b64-9e5c-4511fc454db0",
+		"name": "1.Statistics",
+		"description": "# Introduction\nWhat does your API do?\nUse this API to monitor your service’s bandwidth and traffic volume. When multiple domain names are passed in, the sum of the total bandwidth/volume is returned. Unit: bit/second. When the domains variable is set to all, the sum of all active domain’s bandwidth/volume is returned. (Deleted or suspended domains are not taken into the calculation.)\n\n# Overview\nThings that the developers should know about\nThe default data statistical granularity is 5 minutes. When the bandwidth is 0, it is not displayed by default. See the Response Header section for information on call frequency limit.\n\n# Authentication\nWhat is the preferred way of using the API?\nNotice: Please request the API token from your account team.\n\n# Error Codes\nWhat errors and status codes can a user expect?\n404 Bad request URLs.\n401 Authorization Error: Invalid token or lack of access.\n400 Bad request parameters.\n200 Success.\n5xx Please contact your account team.\n# Rate limit\nIs there a limit to the number of requests an user can send?\nSee the Response Header section for information on call frequency limit.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Bandwidth and Volume Traffic",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/stat/bandwidth?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-10&end_time=2019-06-30&grad=day&data_type=bandwidth&ip_protocol=ipv6",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"stat",
+						"bandwidth"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domains",
+							"value": "aa.qingcdn.com",
+							"description": "Domain names. Separate domain names by a comma (,). Up to 10 domain names at a time. all means all domains names, For example, aa.qingcdn.com,bb.qingcdn.com"
+						},
+						{
+							"key": "start_time",
+							"value": "2019-06-10",
+							"description": "Start time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data starting at 2017-04-26 00:00:00."
+						},
+						{
+							"key": "end_time",
+							"value": "2019-06-30",
+							"description": "End time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data ending at 2017-04-26 23:59:59. The end time has to be greater than start time but must be within the range of 31 days."
+						},
+						{
+							"key": "grad",
+							"value": "day",
+							"description": "Granularity of the data. minute5 by default. The options are minute5 (5 minutes), hour, or day."
+						},
+						{
+							"key": "data_type",
+							"value": "bandwidth",
+							"description": "Type of data to retrieve, such as traffic or bandwidth. The value is bandwidth by default."
+						},
+						{
+							"key": "ip_protocol",
+							"value": "ipv6",
+							"description": "IP Protocol of the data, such as ipv6 and ipv4, The value is all(total IP Protocol) by default."
+						}
+					]
+				},
+				"description": "Use this API to monitor your service’s bandwidth and traffic volume. When multiple domain names are passed in, the sum of the total bandwidth/volume is returned. Unit: bit/second. When the domains variable is set to all, the sum of all active domain’s bandwidth/volume is returned. (Deleted or suspended domains are not taken into the calculation.)\n\nNotice: The default data statistical granularity is 5 minutes. When the bandwidth is 0, it is not displayed by default. See the Response Header section for information on call frequency limit."
+			},
+			"response": []
+		},
+		{
+			"name": "Origin Error Ratio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9b38ecbf-a833-4adb-8438-d1c4d687fb1f",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/stat/originErrRatio?token=[token]&domain=aa.qingcdn.com&start_time=2019-06-09%2000:00&end_time=2019-06-30%2000:10",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"stat",
+						"originErrRatio"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domain",
+							"value": "aa.qingcdn.com",
+							"description": "Domain names. Separate domain names by a comma (,). Up to 10 domain names at a time. all means all domains names, For example, aa.qingcdn.com,bb.qingcdn.com"
+						},
+						{
+							"key": "start_time",
+							"value": "2019-06-09%2000:00",
+							"description": "Start time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data starting at 2017-04-26 00:00:00."
+						},
+						{
+							"key": "end_time",
+							"value": "2019-06-30%2000:10",
+							"description": "End time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data ending at 2017-04-26 23:59:59. The end time has to be greater than start time but must be within the range of 31 days."
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Use this API to retrieve origin error rate, such as 4xx rate and 5xx rate.\n\nNotice: The data granularity is 1-minute. Each request is limited to a 1-day range. The call frequency information can be found in the response headers."
+			},
+			"response": []
+		},
+		{
+			"name": "HTTP Status Code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/stat/httpcode?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09 13:00&end_time=2019-06-11 13:20",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"stat",
+						"httpcode"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domains",
+							"value": "aa.qingcdn.com",
+							"description": "Domain names. Separate domain names by a comma (,). Up to 10 domain names at a time. all means all domains names, For example, aa.qingcdn.com,bb.qingcdn.com."
+						},
+						{
+							"key": "start_time",
+							"value": "2019-06-09 13:00",
+							"description": "Start time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data starting at 2017-04-26 00:00:00."
+						},
+						{
+							"key": "end_time",
+							"value": "2019-06-11 13:20",
+							"description": "End time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data ending at 2017-04-26 23:59:59. The end time has to be greater than start time but must be within the range of 31 days"
+						}
+					]
+				},
+				"description": "Use this API to retrieve status code metrics of one multiple host names. When multiple host names are queried together, the sum will be returned.\n\nNotice: The API gateway limits a single request to no more than one scalar value: Number of domain names * Number of data points per day * Number of days <= 2880, greater than this value will prompt: Single request exceed limit."
+			},
+			"response": []
+		},
+		{
+			"name": "Per-Domain Bandwidth and Traffic",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/stat/bandwidth/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09 11:00&end_time=2019-06-20 12:00&query_area=abroad&grad=hour&stat_is_forward=1&data_type=bandwidth&ip_protocol=ipv4",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"stat",
+						"bandwidth",
+						"eachDomain"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domains",
+							"value": "aa.qingcdn.com",
+							"description": "Domain names. Separate domain names by a comma (,). Up to 10 domain names at a time. all means all domains names, For example, aa.qingcdn.com,bb.qingcdn.com"
+						},
+						{
+							"key": "start_time",
+							"value": "2019-06-09 11:00",
+							"description": "Start time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data starting at 2017-04-26 00:00:00."
+						},
+						{
+							"key": "end_time",
+							"value": "2019-06-20 12:00",
+							"description": "End time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data ending at 2017-04-26 23:59:59. The end time has to be greater than start time but must be within the range of 31 days."
+						},
+						{
+							"key": "query_area",
+							"value": "abroad",
+							"description": "all (default): total global bandwidth; cn: China bandwidth; abroad: outside of China bandwidth."
+						},
+						{
+							"key": "grad",
+							"value": "hour",
+							"description": "Granularity of the data. minute5 by default. The options are minute5 (5 minutes), hour, or day."
+						},
+						{
+							"key": "stat_is_forward",
+							"value": "1",
+							"description": "0 (default): pointing backward, for example, 2016- 03-16 10:00 means [2016-03-16 10:00:00, 2016-03-16 10:04:59]. 1: pointing forward, for example, 2016-03-16 10:05 means [2016-03-16 10:00:00, 2016-03-16 10:04:59]."
+						},
+						{
+							"key": "data_type",
+							"value": "bandwidth",
+							"description": "Type of data to retrieve, such as traffic or bandwidth. The value is bandwidth by default."
+						},
+						{
+							"key": "ip_protocol",
+							"value": "ipv4",
+							"description": "IP Protocol of the data, such as ipv6 and ipv4, The value is all(total IP Protocol) by default."
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Use this API to retrieve bandwidth/traffic metrics for individual host names. The unit for bandwidth is bit/second and for traffic is bytes.\n\nNotice: The default data granularity is 5-minute.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Per-Domain Origin Bandwidth and Traffic",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/stat/originBandwidth/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-16&grad=hour&data_type=bandwidth",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"stat",
+						"originBandwidth",
+						"eachDomain"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domains",
+							"value": "aa.qingcdn.com",
+							"description": "Domain names. Separate domain names by a comma (,). Up to 10 domain names at a time. all means all domains names, For example, aa.qingcdn.com,bb.qingcdn.com"
+						},
+						{
+							"key": "start_time",
+							"value": "2019-06-09",
+							"description": "Start time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data starting at 2017-04-26 00:00:00."
+						},
+						{
+							"key": "end_time",
+							"value": "2019-06-16",
+							"description": "End time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data ending at 2017-04-26 23:59:59. The end time has to be greater than start time but must be within the range of 31 days."
+						},
+						{
+							"key": "grad",
+							"value": "hour",
+							"description": "Granularity of the data. minute5 by default. The options are minute5 (5 minutes), hour, or day."
+						},
+						{
+							"key": "data_type",
+							"value": "bandwidth",
+							"description": "Type of data to retrieve, such as traffic or bandwidth. The value is bandwidth by default."
+						}
+					]
+				},
+				"description": "Data of returning origin bandwidth/traffic volume, importing API parameters data_type=traffic to receive traffic volume data.\n\nNotice: The default data statistical granularity is 5 minutes. See the Response Header section for information on call frequency limit."
+			},
+			"response": []
+		},
+		{
+			"name": "Per-Domain Origin Requests Counts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/stat/originRequest/eachDomain?token=[token]&domain=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-30",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"stat",
+						"originRequest",
+						"eachDomain"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domain",
+							"value": "aa.qingcdn.com",
+							"description": "Domain names. Separate domain names by a comma (,). Up to 10 domain names at a time. all means all domains names, For example, aa.qingcdn.com,bb.qingcdn.com"
+						},
+						{
+							"key": "start_time",
+							"value": "2019-06-09",
+							"description": "Start time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data starting at 2017-04-26 00:00:00."
+						},
+						{
+							"key": "end_time",
+							"value": "2019-06-30",
+							"description": "End time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data ending at 2017-04-26 23:59:59. The end time has to be greater than start time but must be within the range of 31 days."
+						}
+					]
+				},
+				"description": "Request numbers of returning origin request for domain names.\n\nNotice: The default data statistical granularity is 5 minutes. See the Response Header section for information on call frequency limit."
+			},
+			"response": []
+		},
+		{
+			"name": "Per-Domain Edge Request Counts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/stat/request/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-12&grad=minute5&stat_is_forward=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"stat",
+						"request",
+						"eachDomain"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domains",
+							"value": "aa.qingcdn.com",
+							"description": "Domain names. Separate domain names by a comma (,). Up to 10 domain names at a time. all means all domains names, For example, aa.qingcdn.com,bb.qingcdn.com"
+						},
+						{
+							"key": "start_time",
+							"value": "2019-06-09",
+							"description": "Start time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data starting at 2017-04-26 00:00:00."
+						},
+						{
+							"key": "end_time",
+							"value": "2019-06-12",
+							"description": "End time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data ending at 2017-04-26 23:59:59. The end time has to be greater than start time but must be within the range of 31 days."
+						},
+						{
+							"key": "grad",
+							"value": "minute5",
+							"description": "Granularity of the data. minute5 by default. The options are minute5 (5 minutes), hour, or day."
+						},
+						{
+							"key": "stat_is_forward",
+							"value": "1",
+							"description": "0 (default): pointing backward, for example, 2016- 03-16 10:00 means [2016-03-16 10:00:00, 2016-03- 16 10:04:59]. 1: pointing forward, for example, 2016-03-16 10:05 means [2016-03-16 10:00:00, 2016-03-16 10:04:59]."
+						}
+					]
+				},
+				"description": "Looking up Per-domain request numbers.\n\nNotice: The default data statistical granularity is 5 minutes. See the Response Header section for information on call frequency limit."
+			},
+			"response": []
+		},
+		{
+			"name": "Per-Domain Status Code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/stat/httpcode/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-10&end_time=2019-06-30&grad=minute5&stat_is_forward=0",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"stat",
+						"httpcode",
+						"eachDomain"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domains",
+							"value": "aa.qingcdn.com",
+							"description": "Domain names. Separate domain names by a comma (,). Up to 10 domain names at a time. all means all domains names, For example, aa.qingcdn.com,bb.qingcdn.com"
+						},
+						{
+							"key": "start_time",
+							"value": "2019-06-10",
+							"description": "Start time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data starting at 2017-04-26 00:00:00."
+						},
+						{
+							"key": "end_time",
+							"value": "2019-06-30",
+							"description": "End time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data ending at 2017-04-26 23:59:59. The end time has to be greater than start time but must be within the range of 31 days."
+						},
+						{
+							"key": "grad",
+							"value": "minute5",
+							"description": "Granularity of the data. minute5 by default. The options are minute5 (5 minutes), hour, or day."
+						},
+						{
+							"key": "stat_is_forward",
+							"value": "0",
+							"description": "0 (default): pointing backward, for example, 2016- 03-16 10:00 means [2016-03-16 10:00:00, 2016-03- 16 10:04:59]. 1: pointing forward, for example, 2016-03-16 10:05 means [2016-03-16 10:00:00, 2016-03-16 10:04:59]."
+						}
+					]
+				},
+				"description": "Looking up Per-domain status.\n\nNotice: The default data statistical granularity is 5 minutes. See the Response Header section for information on call frequency limit."
+			},
+			"response": []
+		},
+		{
+			"name": "Per-Domain Page View Count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/stat/pv/eachDomain?token=[token]&domain=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-19&grad=day&stat_is_forward=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"stat",
+						"pv",
+						"eachDomain"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domain",
+							"value": "aa.qingcdn.com",
+							"description": "Domain names. Separate domain names by a comma (,). Up to 10 domain names at a time. all means all domains names, For example, aa.qingcdn.com,bb.qingcdn.com"
+						},
+						{
+							"key": "start_time",
+							"value": "2019-06-09",
+							"description": "Start time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data starting at 2017-04-26 00:00:00."
+						},
+						{
+							"key": "end_time",
+							"value": "2019-06-19",
+							"description": "End time in the format of YYYY-mm-dd or YYYY- mm-dd HH:ii. For example, 2017-04-26 retrieves bandwidth/traffic data ending at 2017-04-26 23:59:59. The end time has to be greater than start time but must be within the range of 31 days."
+						},
+						{
+							"key": "grad",
+							"value": "day",
+							"description": "Granularity of the data. minute5 by default. The options are minute5 (5 minutes), hour, or day."
+						},
+						{
+							"key": "stat_is_forward",
+							"value": "1",
+							"description": "0 (default): pointing backward, for example, 2016- 03-16 10:00 means [2016-03-16 10:00:00, 2016-03- 16 10:04:59]. 1: pointing forward, for example, 2016-03-16 10:05 means [2016-03-16 10:00:00, 2016-03-16 10:04:59]."
+						}
+					]
+				},
+				"description": "Per domain name receive PV(Page View).\n\nNotice: Currently PV statistics only count codes 1xx 2xx and 304 and Content-Type: \"text/html\", \"text/asp\", \"text/plain\""
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0b6df067-1848-49c3-af64-237819e8f12a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9376bd68-496f-4f7f-80f8-7519b152da5f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
