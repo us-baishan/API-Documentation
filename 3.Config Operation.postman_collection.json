@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f68989c4-2a84-425c-ac98-0c19b39e0c98",
+		"_postman_id": "postmanid",
 		"name": "3.Config Operation",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -685,7 +685,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0b121e28-fb40-44b4-8188-f3dd7c197db2",
+								"id": "id",
 								"exec": [
 									""
 								],
@@ -695,7 +695,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "ee288869-344f-4697-bfbf-7444810d4491",
+								"id": "id",
 								"exec": [
 									""
 								],
@@ -915,11 +915,11 @@
 							"query": [
 								{
 									"key": "token",
-									"value": "5eb69867938262d91dadab467c6fc9fc"
+									"value": "[token]"
 								},
 								{
 									"key": "domain",
-									"value": "www.bsybenstorage.com",
+									"value": "aa.qingcdn.com",
 									"description": "One single domain name."
 								}
 							]
