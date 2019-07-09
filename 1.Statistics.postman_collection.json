@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "70f85e54-f69c-4b64-9e5c-4511fc454db0",
+		"_postman_id": "postmanid",
 		"name": "1.Statistics",
 		"description": "# Introduction\nWhat does your API do?\nUse this API to monitor your service’s bandwidth and traffic volume. When multiple domain names are passed in, the sum of the total bandwidth/volume is returned. Unit: bit/second. When the domains variable is set to all, the sum of all active domain’s bandwidth/volume is returned. (Deleted or suspended domains are not taken into the calculation.)\n\n# Overview\nThings that the developers should know about\nThe default data statistical granularity is 5 minutes. When the bandwidth is 0, it is not displayed by default. See the Response Header section for information on call frequency limit.\n\n# Authentication\nWhat is the preferred way of using the API?\nNotice: Please request the API token from your account team.\n\n# Error Codes\nWhat errors and status codes can a user expect?\n404 Bad request URLs.\n401 Authorization Error: Invalid token or lack of access.\n400 Bad request parameters.\n200 Success.\n5xx Please contact your account team.\n# Rate limit\nIs there a limit to the number of requests an user can send?\nSee the Response Header section for information on call frequency limit.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -71,7 +71,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9b38ecbf-a833-4adb-8438-d1c4d687fb1f",
+						"id": "id",
 						"exec": [
 							""
 						],
@@ -525,7 +525,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0b6df067-1848-49c3-af64-237819e8f12a",
+				"id": "id",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -535,7 +535,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "9376bd68-496f-4f7f-80f8-7519b152da5f",
+				"id": "id",
 				"type": "text/javascript",
 				"exec": [
 					""
