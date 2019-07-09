@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "be53618e-f7bd-425d-9c5d-e73fea894dfb",
+		"_postman_id": "postmanid",
 		"name": "2.Domain Operation",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -88,7 +88,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "920a548a-b936-4b63-bbb5-ff2c18e1bf69",
+						"id": "id",
 						"exec": [
 							""
 						],
