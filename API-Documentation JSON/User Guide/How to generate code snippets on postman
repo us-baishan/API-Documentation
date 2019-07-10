@@ -1,0 +1,43 @@
+The following steps will show you how to generate different code snippets after import the JSON file
+
+Step1: Select the API request that you want to generate code snippets
+
+Step2: Select "Authorization" (Next to "Params")
+
+Step3: On the right-hand side, select "code"
+
+Step4: The "Generate code snippets" window will pop-up, choose the format on the left-up corner
+
+
+
+Here is a list of all supporting format:
+HTTP
+C (LibCurl)
+cURL
+C# (RestSharp)
+Go
+Java
+  -OK HTTP
+  -Unirest
+JavaScript
+  -Jquery AJAX
+  -XHR
+NodeJS
+  -Native
+  -Request
+  -Unirest
+Objective-C(NSURL)
+OCaml(Cohttp)
+PHP
+  -HttpRequest
+  -pecl_http
+  -cURL
+Python
+  -http.client(Python 3)
+  -Requests
+Ruby(NET::Http)
+Shell
+  -wget
+  -Httpie
+  -cURL
+Swift(NSURL)
