@@ -900,7 +900,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/httpsInfo?token=5eb69867938262d91dadab467c6fc9fc&domain=www.bsybenstorage.com",
+							"raw": "https://api.qingcdn.com/v2/domain/httpsInfo?token=[token]&domain=aa.qingcdn.com",
 							"protocol": "https",
 							"host": [
 								"api",
