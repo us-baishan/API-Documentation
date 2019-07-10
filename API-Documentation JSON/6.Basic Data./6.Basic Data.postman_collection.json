@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e77faf64-1044-4e6d-ba51-d9261dcd7087",
+		"_postman_id": "postmanid",
 		"name": "6.Basic Data",
 		"description": "Get the download URL of raw logs for the specified domain name.\n\nNote: Logs are reserved for 14 days. Please make sure to download before the expiration. Request frequency limit can be found the response header, X-Ratelimit-Limit.\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -71,7 +71,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/stat/log/getList?token=5eb69867938262d91dadab467c6fc9fc&start_time=2019-06-09&end_time=2019-06-18&domain=www.bsybenstorage.com&need_md5=1&need_size=1",
+							"raw": "https://api.qingcdn.com/v2/stat/log/getList?token=[token]&start_time=2019-06-09&end_time=2019-06-18&domain=aa.qingcdn.com&need_md5=1&need_size=1",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -87,7 +87,7 @@
 							"query": [
 								{
 									"key": "token",
-									"value": "5eb69867938262d91dadab467c6fc9fc"
+									"value": "token"
 								},
 								{
 									"key": "start_time",
@@ -99,7 +99,7 @@
 								},
 								{
 									"key": "domain",
-									"value": "www.bsybenstorage.com"
+									"value": "aa.qingcdn.com"
 								},
 								{
 									"key": "need_md5",
@@ -183,7 +183,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a08faa87-7e16-4b20-b037-f8cb5d9272ab",
+				"id": "id",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -193,7 +193,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "c4a2fe5e-a33f-4569-8c81-6ed78f3434eb",
+				"id": "id",
 				"type": "text/javascript",
 				"exec": [
 					""
