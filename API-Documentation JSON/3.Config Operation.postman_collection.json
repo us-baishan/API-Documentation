@@ -1,0 +1,1095 @@
+{
+	"info": {
+		"_postman_id": "postmanid",
+		"name": "3.Config Operation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Modify Configuration",
+			"item": [
+				{
+					"name": "Modify Configuration ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\":\"token\",\n    \"domains\":\"aa.qingcdn.com\",\n    \"config\": {\n        \"origin\": {\n            \"default_master\": \"133.233.133.32\",\n            \"default_slave\": \"12.13.41.11\",\n            \"origin_mode\": \"custom\",\n            \"ori_https\": \"yes\",\n            \"port\":\"65535\"\n         \n        },\n        \"origin_host\": {\n            \"host\": \"test.qingcdn.com\"\n        },\n        \"referer\": {\n            \"type\": 2,\n            \"list\": [\n                \"*.qingcdn.com\",\n                \"new.vx.qingcdn.com\"\n            ],\n            \"allow_empty\": true\n        },\n        \"ip_black_list\": {\n            \"list\": [\n                \"14.12.11.0/24\",\n                \"1.2.3.1\"\n            ]\n        },\n        \"ip_white_list\": {\n            \"list\": [\n                \"14.12.11.0/24\",\n                \"1.2.3.1\"\n            ]\n        },\n        \"add_response_head\":{\n            \"type\":\"add\",\n            \"list\":[\n                {\n                    \"name\":\"Content-Type\", \n                    \"value\":\"text/html; charset=ISO-8859-4\"\n                },\n                {\n                    \"name\":\"Cache-Control\", \n                    \"value\":\"max-age=300, must-revalidate\"\n                }\n            ]\n        },\n         \"https\":{\n            \"cert_id\":0\n        },\n        \"visit_timestamp\": {\n            \"pattern\": \".*\",\n            \"time_format\": \"timestamp\",\n            \"key\": \"c3RyaWN0b\",\n            \"keyname\": \"sign\",\n            \"timename\": \"time\",\n            \"deadtime\": \"3600\",\n            \"req_uri_type\": \"2\",\n            \"origin_type\": \"2\",\n            \"error_page\": \"\",\n            \"style\": \"$ourkey$uri$time\"\n        },\n        \"cache_rule\": [\n            {\n                \"type\": \"2\",\n                \"pattern\": \"/product/index,/test/index,/user/index\",\n                \"time\": 86400,\n                \"timeunit\": \"s\",\n                \"ignore_no_cache\": \"on\"\n            },\n            {\n                \"type\": \"1\",\n                \"pattern\": \"jpg,png,gif\",\n                \"time\": 86400,\n                \"timeunit\": \"s\"\n            },\n            {\n                \"type\": \"3\",\n                \"pattern\": \"/index.html,/test/*.jpg,/user/get?index\",\n                \"time\": 86400,\n                \"timeunit\": \"s\"\n            }\n        ],\n        \"video_drag\": {\n            \"url\": \"\\\\.(mp4|flv|f4v|m4v)\",\n            \"mp4\": \"off\",\n            \"flv\": \"off\",\n            \"start\": \"start\",\n            \"end\": \"end\"\n        },\n        \"compress_response\": {\n            \"content_type\": [\n                \"text/plain\",\n                \"application/x-javascript\"\n            ],\n            \"min_size\": \"2\",\n            \"min_size_unit\": \"KB\"\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://api.qingcdn.com/v2/domain/config?",
+							"protocol": "https",
+							"host": [
+								"api",
+								"qingcdn",
+								"com"
+							],
+							"path": [
+								"v2",
+								"domain",
+								"config"
+							],
+							"query": [
+								{
+									"key": "domain",
+									"value": null,
+									"description": "Domain names. Separate domain names by commas (,). Up to 10 domain names at a time. For example, aa.qingcdn.com,bb.qingcdn.com.",
+									"disabled": true
+								},
+								{
+									"key": "config",
+									"value": null,
+									"description": "Specify the config rule(s) that you’d like to look up. The default is to return all config rules. For example:[\"referer\",\"origin\",\"ip_black_list\",\"cache_rule\",\"origin_host\"]\n",
+									"disabled": true
+								},
+								{
+									"key": "default_master",
+									"value": null,
+									"description": "Default origin. Can provide up to six (6) IPs or domain names, separated by commas (,). For example, \"133.233.133.33,133.233.22.33\".",
+									"disabled": true
+								},
+								{
+									"key": "default_slave",
+									"value": null,
+									"description": "Backup origin. Can provide up to six IPs or domain names, separated by commas (,). For example, \"133.233.133.33,133.233.22.33\". Backup origins MUST be different from the default origins.",
+									"disabled": true
+								},
+								{
+									"key": "origin_mode",
+									"value": null,
+									"description": "Select the protocol Baishan servers should use to contact the origin with. The values can be http, https, default, custom. \norigin_mode=http: forward requests to the origins via HTTP and port 80. \norigin_mode=https: forward requests to the origins via HTTPS and port 443. \norigin_mode=default: forward requests to the origins via the same protocol as the end user’s request.\norigin_mode=custom: customize ori_https and port number.",
+									"disabled": true
+								},
+								{
+									"key": "ori_https",
+									"value": null,
+									"description": "Specify whether HTTPS should be used when contacting the origin. The options are yes,no . Can only be used when origin_mode=custom",
+									"disabled": true
+								},
+								{
+									"key": "port",
+									"value": null,
+									"description": "Specify the port number to use when contacting the origin. Default is port 80. Can only be used whenorigin_mode=custom (0- 65535)",
+									"disabled": true
+								},
+								{
+									"key": "host",
+									"value": null,
+									"description": "Specify what the host header should be when contacting the origin, for example, \"test.qingcdn.com\"\n",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": null,
+									"description": "Types of protection: \n1: meaning blacklist, and \n2: meaning whitelist.",
+									"disabled": true
+								},
+								{
+									"key": "list",
+									"value": null,
+									"description": "The whitelist or blacklist. Multiple entries can be separated by commas (,). Wildcard values must start with *. For example,[\"*.aaa.qingcdn.com\",\"www.qingcdn.com\",\"*.test.com\"] \"*.test.com\"includes any matching host headers as well as test.coms",
+									"disabled": true
+								},
+								{
+									"key": "allow_empty",
+									"value": null,
+									"description": "The value is true by default. true = allow the connection even when the referer header is empty, and false = block the connections if the referer header is empty.",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": null,
+									"description": "Types of caching rules:\n1: file extension, \n2: directory, \n3: complete path match, \n4: Regular expression (RegEx).",
+									"disabled": true
+								},
+								{
+									"key": "pattern",
+									"value": null,
+									"description": "Caching rules separated by a commas. For example, \nWhen type=1,jpg,png,gif, \nWhen type=2,/product/index,/test/index,/user/index,\nWhen type=3,/index.html,/test/*.jpg,/user/get?index, \nWhen type=4, see RegEx Explanation section below. The caching rules will be applied if an URL matches the RegEx. By default, query string is a part of the cache key, expires header is ignored, but no-cache header is prioritized and honored.] \"*.test.com\" includes any matching host headers and empty host headers.",
+									"disabled": true
+								},
+								{
+									"key": "time",
+									"value": null,
+									"description": "Caching time-to-live (TTL). Use with the timeunit parameter below. The maximum TTL is 2 years. If time=0, a no-cache rule is applied to the specified pattern.",
+									"disabled": true
+								},
+								{
+									"key": "timeunit",
+									"value": null,
+									"description": "Unit of the TTL value above. The unit is s (second) by default. Other options are Y,M,D,h,i,s (year, month, day, hour, minute, second).",
+									"disabled": true
+								},
+								{
+									"key": "ignore_no_cache",
+									"value": null,
+									"description": "Ignore the no-cache header from the origin. The value is off by default. Only valid when TTL>0. It can be set to on,off.\n",
+									"disabled": true
+								},
+								{
+									"key": "ignore_expired",
+									"value": null,
+									"description": "Ignore the expires header from the origin. The value is The value is on by default. Only valid when TTL>0. It can be set to on,off.",
+									"disabled": true
+								},
+								{
+									"key": "ignore_query",
+									"value": null,
+									"description": "Ignore the expires header from the origin. The value is off by default. Only valid when TTL>0. It can be set to on,off.",
+									"disabled": true
+								},
+								{
+									"key": "list",
+									"value": null,
+									"description": "Ip blacklist with entries separated by commas. Up to 200 entries. For example, [\"1.1.1.0/24\", \"2.2.2.2\", \"3.3.3.3\"]. /8, /16, and /24 CIDR blocks are supported, but no repetition is allowed.Note: setting blacklist will remove whitelist",
+									"disabled": true
+								},
+								{
+									"key": "list",
+									"value": null,
+									"description": "ip whitelist with entries separated by commas. Up to 200 entries. For example, [\"1.1.1.0/24\", \"2.2.2.2\", \"3.3.3.3\"]. /8, /16, and /24 CIDR blocks are supported, but no repetition is allowed.Note: setting whitelist will remove blacklist",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": null,
+									"description": "Default setting is reset, the options are reset,add,remove. reset can reset the previous header with a new header; add can add a new header or replace the previous exist header;remove can delete the response header (add and reset respond differently).",
+									"disabled": true
+								},
+								{
+									"key": "list",
+									"value": null,
+									"description": "Response header list: type,reset,add.For example, [{\"name\":\"Content-Type\",\"value\":\"text/html..\"},{\"name\":\"Cache-Control\",\"value\":\"max-age...\"}], when type = remove, just send header name, such as [\"Content-Type\",\"Cache-Control\"].",
+									"disabled": true
+								},
+								{
+									"key": "cert_id",
+									"value": null,
+									"description": "Specify the HTTPS certificate ID.",
+									"disabled": true
+								},
+								{
+									"key": "http2",
+									"value": null,
+									"description": "Options are on,off, on = turn on http2, off = turn off http2.",
+									"disabled": true
+								},
+								{
+									"key": "pattern",
+									"value": null,
+									"description": "RegEx to match desired URLs. The format should follow $scheme://$domain/$uri?$args. .* matches all incoming URLs.",
+									"disabled": true
+								},
+								{
+									"key": "time_format",
+									"value": null,
+									"description": "Time format. The options are timestamp_hex, date_minute (YYYYmmddHHii, such as 201805211010), and timestamp (decimal timestamp)",
+									"disabled": true
+								},
+								{
+									"key": "key",
+									"value": null,
+									"description": "Key value(s) to be used to generate a signature. Separate multiple values by commas.",
+									"disabled": true
+								},
+								{
+									"key": "deadtime",
+									"value": null,
+									"description": "URL time-to-live in seconds. The value has to be greater than 0. The URL will be invalidated after the TTL expires.",
+									"disabled": true
+								},
+								{
+									"key": "req_uri_type",
+									"value": null,
+									"description": "URL match mode types. Currently support the four types below:\n1: $scheme://$domain/$uri?$args&{keyname}= $key&{timename}=$time&$args \n2:$scheme://$domain/$uri?$args&{timename}=$time&{keyname}=$key&$args\n3:$scheme://$domain/$time/$key/$uri?$args \n4:$scheme://$domain/$key/$time/$uri?$args",
+									"disabled": true
+								},
+								{
+									"key": "origin_type",
+									"value": null,
+									"description": "Specify whether to include key/signature when contacting the origin. Options are 1,2. The value is 1 by default, to not include the key/signature. 2 means include key/signature.",
+									"disabled": true
+								},
+								{
+									"key": "style",
+									"value": null,
+									"description": "Parameter encryption combination, $ourkey $uri $time. The three variable’s order is adjustable, ($ourkey, $uri, $time). Temporarily not supporting additional fields or information.",
+									"disabled": true
+								},
+								{
+									"key": "timename",
+									"value": null,
+									"description": "The default value is time. The parameter name used in the url is only need when passing the parameter via query.",
+									"disabled": true
+								},
+								{
+									"key": "keyname",
+									"value": null,
+									"description": "The default value is key. A hash of (path, key, time) is generated with md5 signature and passed in the URL query by parameter name.",
+									"disabled": true
+								},
+								{
+									"key": "protocol",
+									"value": null,
+									"description": "Forbid access protocol, options are http,https.",
+									"disabled": true
+								},
+								{
+									"key": "bcache",
+									"value": null,
+									"description": "Cache control, options are on, off.",
+									"disabled": true
+								},
+								{
+									"key": "code",
+									"value": null,
+									"description": "Status code, can be imported multiple times, seperated with commas , options are 400,403,404,414,500,501,502,503,504,506,5xx where 5xx includes 500,501,502,503,504,506, for eample [\"400\",\"403\",\"5xx\"].",
+									"disabled": true
+								},
+								{
+									"key": "cache_time",
+									"value": null,
+									"description": "Use cache time along with cache_unit. Maxmium time can not exceed 2 years. \nNote: when bcache=on, the vaue must be update.",
+									"disabled": true
+								},
+								{
+									"key": "cache_unit",
+									"value": null,
+									"description": "cache time unit, options are (year,month,day,hour,minute,second)\nNote: when bcache=on, the vaue must be update.",
+									"disabled": true
+								},
+								{
+									"key": "url",
+									"value": null,
+									"description": "For example: .(mp4||flv||f4v||m4v).",
+									"disabled": true
+								},
+								{
+									"key": "mp4",
+									"value": null,
+									"description": "mp4 drag switch, options are on,off.",
+									"disabled": true
+								},
+								{
+									"key": "flv",
+									"value": null,
+									"description": "flv drag switch, options are on,off.",
+									"disabled": true
+								},
+								{
+									"key": "start",
+									"value": null,
+									"description": "start parameters, for example: start, the parameter options are : 'letters, numbers, underscores. Note: The value cannot begin with a number'.",
+									"disabled": true
+								},
+								{
+									"key": "end",
+									"value": null,
+									"description": "end parameters, for example: end, the parameter options are : 'letters, numbers, underscores. Note: The value cannot begin with a number'.",
+									"disabled": true
+								},
+								{
+									"key": "content_type",
+									"value": null,
+									"description": "Matching header, for example [\"text/plain\",\"application/x-javascript\"]",
+									"disabled": true
+								},
+								{
+									"key": "min_size",
+									"value": null,
+									"description": "Minimum size, for example 2. Use it along min_size_unit,indicate what is the minimum size to compress",
+									"disabled": true
+								},
+								{
+									"key": "min_size_unit",
+									"value": null,
+									"description": "Minimum size unit, for example KB. Options are KB/MB",
+									"disabled": true
+								},
+								{
+									"key": "url",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "turn_on",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "Modify existing configurations, including features like caching rules, origin setting, IP blacklist, referer-based whitelist and blacklist, and referer-based hotlink protection.\n\nNote: Each user account can make up to 30 calls/minute for this API. Multiple changes can be submitted together or separately. When all changes are submitted together, one change’s failure/exception can cause all changes to fail."
+					},
+					"response": []
+				},
+				{
+					"name": "Adding cache rules",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\":\"token\",\n    \"domains\":\"aa.qingcdn.com\",\n    \"config\": {\n        \"cache_rule\":[\n            {\n                \"type\":4,\n                \"pattern\":\"index.html,test,*.jpg,user,get?index\",\n                \"time\":3600\n            },\n            {\n                \"type\":1,\n                \"pattern\":\"avi,mp4,mpeg\",\n                \"time\":3600\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "https://api.qingcdn.com/v2/domain/config?",
+							"protocol": "https",
+							"host": [
+								"api",
+								"qingcdn",
+								"com"
+							],
+							"path": [
+								"v2",
+								"domain",
+								"config"
+							],
+							"query": [
+								{
+									"key": "domain",
+									"value": null,
+									"description": "Domain names. Separate domain names by commas (,). Up to 10 domain names at a time. For example, aa.qingcdn.com,bb.qingcdn.com.",
+									"disabled": true
+								},
+								{
+									"key": "config",
+									"value": null,
+									"description": "Specify the config rule(s) that you’d like to look up. The default is to return all config rules. For example:[\"referer\",\"origin\",\"ip_black_list\",\"cache_rule\",\"origin_host\"]",
+									"disabled": true
+								},
+								{
+									"key": "default_master",
+									"value": null,
+									"description": "Default origin. Can provide up to six (6) IPs or domain names, separated by commas (,). For example, \"133.233.133.33,133.233.22.33\".",
+									"disabled": true
+								},
+								{
+									"key": "default_slave",
+									"value": null,
+									"description": "Backup origin. Can provide up to six IPs or domain names, separated by commas (,). For example, \"133.233.133.33,133.233.22.33\". Backup origins MUST be different from the default origins.",
+									"disabled": true
+								},
+								{
+									"key": "origin_mode",
+									"value": null,
+									"description": "Select the protocol Baishan servers should use to contact the origin with. The values can be http, https, default, custom. \norigin_mode=http: forward requests to the origins via HTTP and port 80. \norigin_mode=https: forward requests to the origins via HTTPS and port 443. \norigin_mode=default: forward requests to the origins via the same protocol as the end user’s request.\norigin_mode=custom: customize ori_https and port number.",
+									"disabled": true
+								},
+								{
+									"key": "ori_https",
+									"value": null,
+									"description": "Specify whether HTTPS should be used when contacting the origin. The options are yes,no . Can only be used when origin_mode=custom",
+									"disabled": true
+								},
+								{
+									"key": "port",
+									"value": null,
+									"description": "Specify the port number to use when contacting the origin. Default is port 80. Can only be used whenorigin_mode=custom (0- 65535)",
+									"disabled": true
+								},
+								{
+									"key": "host",
+									"value": null,
+									"description": "Specify what the host header should be when contacting the origin, for example, \"test.qingcdn.com\"\n",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": null,
+									"description": "Types of caching rules:\n1: file extension, \n2: directory, \n3: complete path match, \n4: Regular expression (RegEx).",
+									"disabled": true
+								},
+								{
+									"key": "pattern",
+									"value": null,
+									"description": "Caching rules separated by a commas. For example, \nWhen type=1,jpg,png,gif, \nWhen type=2,/product/index,/test/index,/user/index,\nWhen type=3,/index.html,/test/*.jpg,/user/get?index, \nWhen type=4, see RegEx Explanation section below. The caching rules will be applied if an URL matches the RegEx. By default, query string is a part of the cache key, expires header is ignored, but no-cache header is prioritized and honored.] \"*.test.com\" includes any matching host headers and empty host headers.",
+									"disabled": true
+								},
+								{
+									"key": "time",
+									"value": null,
+									"description": "Caching time-to-live (TTL). Use with the timeunit parameter below. The maximum TTL is 2 years. If time=0, a no-cache rule is applied to the specified pattern.",
+									"disabled": true
+								},
+								{
+									"key": "timeunit",
+									"value": null,
+									"description": "Unit of the TTL value above. The unit is s (second) by default. Other options are Y,M,D,h,i,s (year, month, day, hour, minute, second).",
+									"disabled": true
+								},
+								{
+									"key": "ignore_no_cache",
+									"value": null,
+									"description": "Ignore the no-cache header from the origin. The value is off by default. Only valid when TTL>0. It can be set to on,off.",
+									"disabled": true
+								},
+								{
+									"key": "ignore_expired",
+									"value": null,
+									"description": "Ignore the expires header from the origin. The value is The value is on by default. Only valid when TTL>0. It can be set to on,off.",
+									"disabled": true
+								},
+								{
+									"key": "ignore_query",
+									"value": null,
+									"description": "Ignore the expires header from the origin. The value is off by default. Only valid when TTL>0. It can be set to on,off.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding response header",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\":\"token\",\n    \"domains\":\"aa.qingcdn.com\",\n    \"config\": {\n        \"add_response_head\": {\n            \"type\":\"add\",\n            \"list\":[\n                {\n                    \"name\":\"Content-Type\", \n                    \"value\":\"text/html; charset=ISO-8859-4\"\n                },\n                {\n                    \"name\":\"Cache-Control\", \n                    \"value\":\"max-age=300, must-revalidate\"\n                }\n            ]\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://api.qingcdn.com/v2/domain/config",
+							"protocol": "https",
+							"host": [
+								"api",
+								"qingcdn",
+								"com"
+							],
+							"path": [
+								"v2",
+								"domain",
+								"config"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "",
+									"description": "Default setting is reset, the options are reset,add,remove. reset can reset the previous header with a new header; add can add a new header or replace the previous exist header;remove can delete the response header (add and reset respond differently).",
+									"disabled": true
+								},
+								{
+									"key": "list",
+									"value": "",
+									"description": "Response header list: type,reset,add.For example, [{\"name\":\"Content-Type\",\"value\":\"text/html..\"},{\"name\":\"Cache-Control\",\"value\":\"max-age...\"}], when type = remove, just send header name, such as [\"Content-Type\",\"Cache-Control\"].",
+									"disabled": true
+								},
+								{
+									"key": "domain",
+									"value": "",
+									"description": "Domain names. Separate domain names by commas (,). Up to 10 domain names at a time. For example, aa.qingcdn.com,bb.qingcdn.com.",
+									"disabled": true
+								},
+								{
+									"key": "config",
+									"value": "",
+									"description": "Specify the config rule(s) that you’d like to look up. The default is to return all config rules. For example:[\"referer\",\"origin\",\"ip_black_list\",\"cache_rule\",\"origin_host\"]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete response header",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\":\"token\",\n    \"domains\":\"aa.qingcdn.com\",\n    \"config\": {\n        \"add_response_head\": {\n            \"type\":\"remove\",\n            \"list\":[\"Content-Type\",\"Cache-Control\"]\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://api.qingcdn.com/v2/domain/config",
+							"protocol": "https",
+							"host": [
+								"api",
+								"qingcdn",
+								"com"
+							],
+							"path": [
+								"v2",
+								"domain",
+								"config"
+							],
+							"query": [
+								{
+									"key": "domain",
+									"value": "",
+									"description": "Domain names. Separate domain names by commas (,). Up to 10 domain names at a time. For example, aa.qingcdn.com,bb.qingcdn.com.",
+									"disabled": true
+								},
+								{
+									"key": "config",
+									"value": "",
+									"description": "Specify the config rule(s) that you’d like to look up. The default is to return all config rules. For example:[\"referer\",\"origin\",\"ip_black_list\",\"cache_rule\",\"origin_host\"]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add referer whitelist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\":\"token\",\n    \"domains\":\"aa.qingcdn.com\",\n    \"config\": {\n        \"visit_deny_whitelist\": [\n            {\"url\":\"/user/get?index\",\"turn_on\":true},\n            {\"url\":\"/contract/get?index\",\"turn_on\":true}\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "https://api.qingcdn.com/v2/domain/config",
+							"protocol": "https",
+							"host": [
+								"api",
+								"qingcdn",
+								"com"
+							],
+							"path": [
+								"v2",
+								"domain",
+								"config"
+							],
+							"query": [
+								{
+									"key": "url",
+									"value": "",
+									"description": "Must be filled, setting url address:/user/get?index",
+									"disabled": true
+								},
+								{
+									"key": "turn_on",
+									"value": "",
+									"description": "Options are true、false, ture= open current url whitelist, false = remove current referer whitelist setting.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove referer whitelist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {  \"token\":\"token\",\n    \"domains\":\"aa.qingcdn.com\",\n    \"config\": {\n        \"visit_deny_whitelist\": [\n            {\"url\":\"/user/get?index\",\"turn_on\":false},\n            {\"url\":\"/contract/get?index\",\"turn_on\":false}\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "https://api.qingcdn.com/v2/domain/config",
+							"protocol": "https",
+							"host": [
+								"api",
+								"qingcdn",
+								"com"
+							],
+							"path": [
+								"v2",
+								"domain",
+								"config"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Certificate",
+			"item": [
+				{
+					"name": "Upload Certificate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"token\":\"token\",\"domain\":\"aa.qingcdn.com\",\"https_status\":\"1\",\"http2\":\"off\", \"force_https\":\"0\",\"certificate\":\"-----BEGIN CERTIFICATE-----\\n-----END CERTIFICATE-----\\n-----BEGIN CERTIFICATE-----\\nMIIGVjCCBT6gAwIBAgIQWBJg+y9qE2JohUL0YPZSozANBgkqhkiG9w0BAQsFADCB/nkDELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4G.../n1TKW9\\/gXCqIumJ+bTCt+tcTpB20l1TCOEQVPLC1d270jSdohhhQyLnhBon2zd\\nmrQ3hTlwbh5a7FYFNs43ngicYdcdQ1DlVpoAsPuQpVcvzs7F7kIjzsL6\\n-----END CERTIFICATE-----\", \"private_key\":\"-----BEGIN PRIVATE KEY-----\\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDC4TwXktCpY9vO\\nz3A5YuKgtK6oT6E5yVyQO080RAtXogpMVIbhYpIrjyBoauimeFKIlqW2rH97q6PP...\\n-----END PRIVATE KEY-----\"\n}\n"
+						},
+						"url": {
+							"raw": "https://api.qingcdn.com/v2/domain/httpsInfo",
+							"protocol": "https",
+							"host": [
+								"api",
+								"qingcdn",
+								"com"
+							],
+							"path": [
+								"v2",
+								"domain",
+								"httpsInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Certificate list lookup",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "id",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "id",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.qingcdn.com/v2/domain/certificate?token=[token]&page_size=15&page_number=1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"qingcdn",
+								"com"
+							],
+							"path": [
+								"v2",
+								"domain",
+								"certificate"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "[token]"
+								},
+								{
+									"key": "page_size",
+									"value": "15",
+									"description": "Number of pages. Select from range 1-500. The default is 100."
+								},
+								{
+									"key": "page_number",
+									"value": "1",
+									"description": "Page number. The default is 1."
+								},
+								{
+									"key": "cert_id",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Individual Certificate lookup",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.qingcdn.com/v2/domain/certificate?token=[token]&cert_id=123",
+							"protocol": "https",
+							"host": [
+								"api",
+								"qingcdn",
+								"com"
+							],
+							"path": [
+								"v2",
+								"domain",
+								"certificate"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "[token]"
+								},
+								{
+									"key": "cert_id",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete Certificate",
+			"item": [
+				{
+					"name": "Delete Certificate",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"cert_id\":123}"
+						},
+						"url": {
+							"raw": "https://api.qingcdn.com/v2/domain/certificate?token=[token]",
+							"protocol": "https",
+							"host": [
+								"api",
+								"qingcdn",
+								"com"
+							],
+							"path": [
+								"v2",
+								"domain",
+								"certificate"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "[token]"
+								},
+								{
+									"key": "cert_id",
+									"value": "123",
+									"description": "Certificate ID that need to be deleted",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove the binding",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\":\"token\",\n    \"domains\":\"aa.qingcdn.com\",\n    \"config\": {\n         \"https\":{\n            \"cert_id\":0\n        }\n    }\n}\n"
+						},
+						"url": {
+							"raw": "https://api.qingcdn.com/v2/domain/config",
+							"protocol": "https",
+							"host": [
+								"api",
+								"qingcdn",
+								"com"
+							],
+							"path": [
+								"v2",
+								"domain",
+								"config"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HTTPS Lookup",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/domain/httpsInfo?token=[token]&domain=aa.qingcdn.com",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"domain",
+						"httpsInfo"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domain",
+							"value": "aa.qingcdn.com",
+							"description": "One single domain name."
+						}
+					]
+				},
+				"description": "To lookup a domain’s HTTPS settings.\n\nNote: The frequency of this API call is described in the Response Header section below.\n"
+			},
+			"response": [
+				{
+					"name": "HTTPS Lookup",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.qingcdn.com/v2/domain/httpsInfo?token=5eb69867938262d91dadab467c6fc9fc&domain=www.bsybenstorage.com",
+							"protocol": "https",
+							"host": [
+								"api",
+								"qingcdn",
+								"com"
+							],
+							"path": [
+								"v2",
+								"domain",
+								"httpsInfo"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "[token]"
+								},
+								{
+									"key": "domain",
+									"value": "aa.qingcdn.com",
+									"description": "One single domain name."
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jun 2019 22:04:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.2.22 (Unix) mod_ssl/2.2.22 OpenSSL/1.0.1e-fips"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "200"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "200"
+						},
+						{
+							"key": "X-RateLimit-Grad",
+							"value": "minute"
+						},
+						{
+							"key": "X-Retry-After",
+							"value": "13"
+						},
+						{
+							"key": "Api-id",
+							"value": "2129950813"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "X-Ser",
+							"value": "BC30_dx-lt-yd-zhejiang-jinhua-5-cache-9, BC230_US-Colorado-Denver-1-cache-2, BC131_US-Washington-seattle-1-cache-1"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 0,\n    \"data\": {\n        \"https_status\": 0,\n        \"force_https\": 0,\n        \"http2\": \"off\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Configuration",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"domains\": \"aa.qingcdn.com\",\n    \"token\": \"token\",\n    \"config\": [\n        \"referer\",\n        \"remove302\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/domain/config",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"domain",
+						"config"
+					],
+					"query": [
+						{
+							"key": "domain",
+							"value": "",
+							"description": "Domain names. Separate domain names by commas (,). Up to 10 domain names at a time. For example, aa.qingcdn.com,bb.qingcdn.com.",
+							"disabled": true
+						},
+						{
+							"key": "config",
+							"value": "",
+							"description": "Specify the config rule(s) that you’d like to look up. The default is to return all config rules. For example:[\"referer\",\"origin\",\"ip_black_list\",\"cache_rule\",\"origin_host\"]",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Use this API to delete a domain configuration, such as: IP blacklist and referer-based whitelist and\n\norigin settings cannot be deleted via this endpoint.\nNote: Each user account can make up to 30 calls/minute for this API."
+			},
+			"response": []
+		},
+		{
+			"name": "View Configuration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qingcdn.com/v2/domain/config?token=[token]&domains=aa.qingcdn.com&config[]=referer&config[]=origin&config[]=ip_black_list&config[]=ip_white_list&config[]=origin_host",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qingcdn",
+						"com"
+					],
+					"path": [
+						"v2",
+						"domain",
+						"config"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "[token]"
+						},
+						{
+							"key": "domains",
+							"value": "aa.qingcdn.com"
+						},
+						{
+							"key": "config[]",
+							"value": "referer"
+						},
+						{
+							"key": "config[]",
+							"value": "origin"
+						},
+						{
+							"key": "config[]",
+							"value": "ip_black_list"
+						},
+						{
+							"key": "config[]",
+							"value": "ip_white_list"
+						},
+						{
+							"key": "config[]",
+							"value": "origin_host"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
