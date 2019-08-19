@@ -25,7 +25,7 @@
 							"raw": "{\n    \"domains\": \"push.qingcdn.net\",\n    \"live_domain_type\": \"push_stream\",\n    \"config\": {\n        \"visit_timestamp\": {\n            \"expires\": 1800,\n            \"time_format\": \"DEC\",\n            \"time_name\": \"timestamp\",\n            \"signature_name\": \"signature\",\n            \"secure_key\": \"fasdjkrlweq\"\n        }\n    }\n}"
 						},
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/liveDomain?token=[token]",
+							"raw": "https://cdn.api.baishan.com/v2/domain/liveDomain?token=[token]",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -112,7 +112,7 @@
 							"raw": "{\n    \"domains\": \"pull.qingcdn.net\",\n    \"live_domain_type\": \"pull_stream\",\n    \"config\": {\n        \"live_app\": {\n            \"list\": [\n                {\n                    \"name\": \"live_v1\"\n                }\n            ]\n        },\n        \"live_origin\": {\n            \"source\": \"baishan\",\n            \"push_domain\": \"push.qingcdn.net\"\n        },\n        \"referer\": {\n            \"type\": \"white\",\n            \"list\": [\n                \"*.a.com\",\n                \"www.bc.com\"\n            ]\n        },\n        \"visit_timestamp\": {\n            \"expires\": 1800,\n            \"time_format\": \"DEC\",\n            \"time_name\": \"timestamp\",\n            \"signature_name\": \"signature\",\n            \"secure_key\": \"fasdjkrlweq\"\n        },\n        \"live_transcode_tpl\": {\n            \"tpls\": [\n                \"720p\",\n                \"1080p\",\n                \"speex2aac\"\n            ]\n        }\n    }\n}"
 						},
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/liveDomain?token=[token]",
+							"raw": "https://cdn.api.baishan.com/v2/domain/liveDomain?token=[token]",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -241,7 +241,7 @@
 							"raw": "{\n        \"domains\": \"src.qingcdn.net\",\n        \"live_domain_type\": \"pull_stream\",\n        \"config\": {\n            \"live_app\": {\n                \"list\": [\n                    {\n                        \"name\": \"live3\"\n                    }\n                ]\n            },\n            \"live_origin\": {\n                \"source\": \"custom\",\n                \"origin_master\": \"1.1.1.1\",\n                \"origin_slave\": \"2.2.2.2\"\n            },\n            \"referer\": {\n                \"type\": \"white\",\n                \"list\": [\n                    \"*.a.com\",\n                    \"www.bc.com\"\n                ]\n            },\n            \"visit_timestamp\": {\n                \"expires\": 1800,\n                \"time_format\": \"DEC\",\n                \"time_name\": \"timestamp\",\n                \"signature_name\": \"signature\",\n                \"secure_key\": \"la333\"\n            }\n        }\n}"
 						},
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/liveDomain?token=[token]",
+							"raw": "https://cdn.api.baishan.com/v2/domain/liveDomain?token=[token]",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -285,7 +285,7 @@
 							"raw": "{\n        \"domains\": \"push.qingcdn.net\",\n        \"live_domain_type\": \"push_stream\",\n        \"config\": {\n            \"visit_timestamp\": {\n                \"expires\": 1800,\n                \"time_format\": \"DEC\",\n                \"time_name\": \"timestamp\",\n                \"signature_name\": \"signature\",\n                \"secure_key\": \"fasdjkrlweq\"\n            }\n        }\n}"
 						},
 						"url": {
-							"raw": "http://api.qingcdn.com/v2/domain/liveConf?token=[token]",
+							"raw": "http://cdn.api.baishan.com/v2/domain/liveConf?token=[token]",
 							"protocol": "http",
 							"host": [
 								"api",
@@ -503,7 +503,7 @@
 					"raw": "{\n    \"app_name\": \"live_v4\",\n    \"pull_stream_domain\": \"pull.qingcdn.net\"\n}"
 				},
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/domain/liveApp?token=[token]",
+					"raw": "https://cdn.api.baishan.com/v2/domain/liveApp?token=[token]",
 					"protocol": "https",
 					"host": [
 						"api",
