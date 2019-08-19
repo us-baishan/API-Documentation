@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/domain/list?token=[token]&page_number=1&page_size=100&domain_status=serving",
+					"raw": "https://cdn.api.baishan.com/v2/domain/list?token=[token]&page_number=1&page_size=100&domain_status=serving",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -55,7 +55,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/domain?token=[token]&domains=aa.qingcdn.com",
+					"raw": "https://cdn.api.baishan.com/v2/domain?token=[token]&domains=aa.qingcdn.com",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -111,7 +111,7 @@
 					"raw": "{\n    \"domain\":\"aa.1.qingcdn.com\",\n    \"type\":\"page\",\n    \"config\":{\n        \"origin\":{\n            \"default_master\":\"1.1.1.1\"\n        }\n    }\n}"
 				},
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/domain?token=[token]",
+					"raw": "https://cdn.api.baishan.com/v2/domain?token=[token]",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -198,7 +198,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/domain?token=[token]&domains=aa.qingcdn.com",
+					"raw": "https://cdn.api.baishan.com/v2/domain?token=[token]&domains=aa.qingcdn.com",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -231,7 +231,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/domain/enable?token=[token]&domain=aa.qingcdn.com",
+					"raw": "https://cdn.api.baishan.com/v2/domain/enable?token=[token]&domain=aa.qingcdn.com",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -265,7 +265,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/domain/disable?token=[token]&domain=aa.qingcdn.com",
+					"raw": "https://cdn.api.baishan.com/v2/domain/disable?token=[token]&domain=aa.qingcdn.com",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -299,7 +299,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/domain/sync?token=[token]&version=0",
+					"raw": "https://cdn.api.baishan.com/v2/domain/sync?token=[token]&version=0",
 					"protocol": "https",
 					"host": [
 						"api",
