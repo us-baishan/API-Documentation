@@ -37,33 +37,33 @@ Step4: The "Generate code snippets" window will pop-up, choose the format on the
 
 
 Here is a list of all supporting format:
-HTTP
-C (LibCurl)
-cURL
-C# (RestSharp)
-Go
-Java
-  -OK HTTP
-  -Unirest
-JavaScript
-  -Jquery AJAX
-  -XHR
-NodeJS
-  -Native
-  -Request
-  -Unirest
-Objective-C(NSURL)
-OCaml(Cohttp)
-PHP
-  -HttpRequest
-  -pecl_http
-  -cURL
-Python
-  -http.client(Python 3)
-  -Requests
-Ruby(NET::Http)
-Shell
-  -wget
-  -Httpie
-  -cURL
-Swift(NSURL)
+<br/>HTTP
+<br/>C (LibCurl)
+<br/>cURL
+<br/>C# (RestSharp)
+<br/>Go
+<br/>Java
+  <br/>-OK HTTP
+  <br/>-Unirest
+<br/>JavaScript
+  <br/>-Jquery AJAX
+  <br/>-XHR
+<br/>NodeJS
+  <br/>-Native
+  <br/>-Request
+  <br/>-Unirest
+<br/>Objective-C(NSURL)
+<br/>OCaml(Cohttp)
+<br/>PHP
+  <br/>-HttpRequest
+  <br/>-pecl_http
+  <br/>-cURL
+<br/>Python
+  <br/>-http.client(Python 3)
+  <br/>-Requests
+<br/>Ruby(NET::Http)
+<br/>Shell
+  <br/>-wget
+  <br/>-Httpie
+  <br/>-cURL
+<br/>Swift(NSURL)
