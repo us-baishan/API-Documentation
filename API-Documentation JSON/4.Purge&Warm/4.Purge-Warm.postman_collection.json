@@ -14,7 +14,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/cache/refresh?token=[token]&start_time=2019-06-09&end_time=2019-06-20&page_number=1",
+							"raw": "https://cdn.api.baishan.com/v2/cache/refresh?token=[token]&start_time=2019-06-09&end_time=2019-06-20&page_number=1",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -75,7 +75,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/cache/refresh?token=[token]&task_id=123",
+							"raw": "https://cdn.api.baishan.com/v2/cache/refresh?token=[token]&task_id=123",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -107,7 +107,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/cache/refresh?token=[token]&start_time=2019-02-24&end_time=2019-02-24&page_number=100&url=http://abc.qingcdn.com/track/main/stat/bandwidth",
+							"raw": "https://cdn.api.baishan.com/v2/cache/refresh?token=[token]&start_time=2019-02-24&end_time=2019-02-24&page_number=100&url=http://abc.qingcdn.com/track/main/stat/bandwidth",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -156,7 +156,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/cache/prefetch?token=[token]&start_time=2019-06-09&end_time=2019-06-20&page_number=100",
+							"raw": "https://cdn.api.baishan.com/v2/cache/prefetch?token=[token]&start_time=2019-06-09&end_time=2019-06-20&page_number=100",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -205,7 +205,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/cache/prefetch?token=[token]&task_id=123",
+							"raw": "https://cdn.api.baishan.com/v2/cache/prefetch?token=[token]&task_id=123",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -238,7 +238,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/cache/prefetch?token=[token]&start_time=2019-06-24&end_time=2019-07-24&page_number=100&url=http://abc.qingcdn.com/domain/fun/info",
+							"raw": "https://cdn.api.baishan.com/v2/cache/prefetch?token=[token]&start_time=2019-06-24&end_time=2019-07-24&page_number=100&url=http://abc.qingcdn.com/domain/fun/info",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -299,7 +299,7 @@
 					"raw": "{\"urls\":[\"http:\\/\\/aa.qingcdn.com\\/resources\\/abc\\/images\\/logo.png\",\"http:\\/\\/portal.qingcdn.com\\/theme\\/bsc1.7\\/images\\/username-caret.png\",\"http:\\/\\/bb.qingcdn.com\\/resources\\/dfas\\/images\\/bsc-icons.png\",\"http:\\/\\/bb.qingcdn.com\\/resources\\/rew\\/images\\/body-bg.jpg\"],\"type\":\"url\"}"
 				},
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/cache/refresh?token=[token]",
+					"raw": "https://cdn.api.baishan.com/v2/cache/refresh?token=[token]",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -350,7 +350,7 @@
 					"raw": "{\"urls\":[\"http://aa.qingcdn.com/resources/rewq/images/logo.png\",\"http://aa.qingcdn.com/resources/fgsa/images/username-caret.png\",\"http://bb.qingcdn.com/resources/fdsa/images/bsc-icons.png\",\"http://cc.qingcdn.com/resources/rewq/images/body-bg.jpg\"]}"
 				},
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/cache/prefetch?token=[token]",
+					"raw": "https://cdn.api.baishan.com/v2/cache/prefetch?token=[token]",
 					"protocol": "https",
 					"host": [
 						"api",
