@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "postmanid",
+		"_postman_id": "fc1947fe-7091-4c8a-8425-ae8557075386",
 		"name": "1.Statistics",
 		"description": "# Introduction\nUse this API to monitor your service’s bandwidth and traffic volume. When multiple domain names are passed in, the sum of the total bandwidth/volume is returned. Unit: bit/second. When the domains variable is set to all, the sum of all active domain’s bandwidth/volume is returned. (Deleted or suspended domains are not taken into the calculation.)\n\n# Overview\nThe default data statistical granularity is 5 minutes. When the bandwidth is 0, it is not displayed by default. See the Response Header section for information on call frequency limit.\n\n# Authentication\nNotice: Please request the API token from your account team.\n\n# Error Codes\nWhat errors and status codes can a user expect?\n404 Bad request URLs.\n401 Authorization Error: Invalid token or lack of access.\n400 Bad request parameters.\n200 Success.\n5xx Please contact your account team.\n# Rate limit\nIs there a limit to the number of requests an user can send?\nSee the Response Header section for information on call frequency limit.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -15,8 +15,9 @@
 					"raw": "https://cdn.api.baishan.com/v2/stat/bandwidth?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-10&end_time=2019-06-30&grad=day&data_type=bandwidth&ip_protocol=ipv6",
 					"protocol": "https",
 					"host": [
+						"cdn",
 						"api",
-						"qingcdn",
+						"baishan",
 						"com"
 					],
 					"path": [
@@ -86,8 +87,9 @@
 					"raw": "https://cdn.api.baishan.com/v2/stat/originErrRatio?token=[token]&domain=aa.qingcdn.com&start_time=2019-06-09%2000:00&end_time=2019-06-30%2000:10",
 					"protocol": "https",
 					"host": [
+						"cdn",
 						"api",
-						"qingcdn",
+						"baishan",
 						"com"
 					],
 					"path": [
@@ -145,8 +147,9 @@
 					"raw": "https://cdn.api.baishan.com/v2/stat/httpcode?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09 13:00&end_time=2019-06-11 13:20",
 					"protocol": "https",
 					"host": [
+						"cdn",
 						"api",
-						"qingcdn",
+						"baishan",
 						"com"
 					],
 					"path": [
@@ -189,8 +192,9 @@
 					"raw": "https://cdn.api.baishan.com/v2/stat/bandwidth/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09 11:00&end_time=2019-06-20 12:00&query_area=abroad&grad=hour&stat_is_forward=1&data_type=bandwidth&ip_protocol=ipv4",
 					"protocol": "https",
 					"host": [
+						"cdn",
 						"api",
-						"qingcdn",
+						"baishan",
 						"com"
 					],
 					"path": [
@@ -264,8 +268,9 @@
 					"raw": "https://cdn.api.baishan.com/v2/stat/originBandwidth/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-16&grad=hour&data_type=bandwidth",
 					"protocol": "https",
 					"host": [
+						"cdn",
 						"api",
-						"qingcdn",
+						"baishan",
 						"com"
 					],
 					"path": [
@@ -319,8 +324,9 @@
 					"raw": "https://cdn.api.baishan.com/v2/stat/originRequest/eachDomain?token=[token]&domain=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-30",
 					"protocol": "https",
 					"host": [
+						"cdn",
 						"api",
-						"qingcdn",
+						"baishan",
 						"com"
 					],
 					"path": [
@@ -364,8 +370,9 @@
 					"raw": "https://cdn.api.baishan.com/v2/stat/request/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-12&grad=minute5&stat_is_forward=1",
 					"protocol": "https",
 					"host": [
+						"cdn",
 						"api",
-						"qingcdn",
+						"baishan",
 						"com"
 					],
 					"path": [
@@ -419,8 +426,9 @@
 					"raw": "https://cdn.api.baishan.com/v2/stat/httpcode/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-10&end_time=2019-06-30&grad=minute5&stat_is_forward=0",
 					"protocol": "https",
 					"host": [
+						"cdn",
 						"api",
-						"qingcdn",
+						"baishan",
 						"com"
 					],
 					"path": [
@@ -474,8 +482,9 @@
 					"raw": "https://cdn.api.baishan.com/v2/stat/pv/eachDomain?token=[token]&domain=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-19&grad=day&stat_is_forward=1",
 					"protocol": "https",
 					"host": [
+						"cdn",
 						"api",
-						"qingcdn",
+						"baishan",
 						"com"
 					],
 					"path": [
