@@ -4,7 +4,7 @@ This is a built API collection from Postman according to Baishancloud API Docume
 
 For Mac users
 This is an intro of how to import this file on your local Postman
-Step1: Download Postman Link: https://www.getpostman.com/downloads/
+<br/>Step1: Download Postman Link: https://www.getpostman.com/downloads/
 Step2: Download the folder on Github
 Step3: Open Postman
 Step4: Choose "file" then select "Import"
