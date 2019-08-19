@@ -2,7 +2,7 @@
 This is a built API collection from Postman according to Baishancloud API Documentation; for more information, please visit our website
 
 
-###For Mac users
+## For Mac users
 This is an intro of how to import this file on your local Postman
 <br/>Step1: Download Postman Link: https://www.getpostman.com/downloads/
 <br/>Step2: Download the folder on Github
@@ -13,7 +13,7 @@ This is an intro of how to import this file on your local Postman
 <br/>Step7: Select the API request that you wanted from "Collection"
 
 
-###For windows users
+## For windows users
 This is an intro of how to import this file on your local Postman
 <br/>Step1: Download Postman Link: https://www.getpostman.com/downloads/
 <br/>Step2: Download the folder on Github
@@ -24,7 +24,7 @@ This is an intro of how to import this file on your local Postman
 <br/>Step6: On the left menu bar change "History" to "Collection"
 <br/>Step7: Select the API request that you wanted from "Collection"
 
-###The following steps will show you how to generate different code snippets after import the JSON file
+## The following steps will show you how to generate different code snippets after import the JSON file
 
 Step1: Select the API request that you want to generate code snippets
 
