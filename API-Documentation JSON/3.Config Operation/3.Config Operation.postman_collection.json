@@ -25,7 +25,7 @@
 							"raw": "{\n    \"token\":\"token\",\n    \"domains\":\"aa.qingcdn.com\",\n    \"config\": {\n        \"origin\": {\n            \"default_master\": \"133.233.133.32\",\n            \"default_slave\": \"12.13.41.11\",\n            \"origin_mode\": \"custom\",\n            \"ori_https\": \"yes\",\n            \"port\":\"65535\"\n         \n        },\n        \"origin_host\": {\n            \"host\": \"test.qingcdn.com\"\n        },\n        \"referer\": {\n            \"type\": 2,\n            \"list\": [\n                \"*.qingcdn.com\",\n                \"new.vx.qingcdn.com\"\n            ],\n            \"allow_empty\": true\n        },\n        \"ip_black_list\": {\n            \"list\": [\n                \"14.12.11.0/24\",\n                \"1.2.3.1\"\n            ]\n        },\n        \"ip_white_list\": {\n            \"list\": [\n                \"14.12.11.0/24\",\n                \"1.2.3.1\"\n            ]\n        },\n        \"add_response_head\":{\n            \"type\":\"add\",\n            \"list\":[\n                {\n                    \"name\":\"Content-Type\", \n                    \"value\":\"text/html; charset=ISO-8859-4\"\n                },\n                {\n                    \"name\":\"Cache-Control\", \n                    \"value\":\"max-age=300, must-revalidate\"\n                }\n            ]\n        },\n         \"https\":{\n            \"cert_id\":0\n        },\n        \"visit_timestamp\": {\n            \"pattern\": \".*\",\n            \"time_format\": \"timestamp\",\n            \"key\": \"c3RyaWN0b\",\n            \"keyname\": \"sign\",\n            \"timename\": \"time\",\n            \"deadtime\": \"3600\",\n            \"req_uri_type\": \"2\",\n            \"origin_type\": \"2\",\n            \"error_page\": \"\",\n            \"style\": \"$ourkey$uri$time\"\n        },\n        \"cache_rule\": [\n            {\n                \"type\": \"2\",\n                \"pattern\": \"/product/index,/test/index,/user/index\",\n                \"time\": 86400,\n                \"timeunit\": \"s\",\n                \"ignore_no_cache\": \"on\"\n            },\n            {\n                \"type\": \"1\",\n                \"pattern\": \"jpg,png,gif\",\n                \"time\": 86400,\n                \"timeunit\": \"s\"\n            },\n            {\n                \"type\": \"3\",\n                \"pattern\": \"/index.html,/test/*.jpg,/user/get?index\",\n                \"time\": 86400,\n                \"timeunit\": \"s\"\n            }\n        ],\n        \"video_drag\": {\n            \"url\": \"\\\\.(mp4|flv|f4v|m4v)\",\n            \"mp4\": \"off\",\n            \"flv\": \"off\",\n            \"start\": \"start\",\n            \"end\": \"end\"\n        },\n        \"compress_response\": {\n            \"content_type\": [\n                \"text/plain\",\n                \"application/x-javascript\"\n            ],\n            \"min_size\": \"2\",\n            \"min_size_unit\": \"KB\"\n        }\n    }\n}"
 						},
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/config?",
+							"raw": "https://cdn.api.baishan.com/v2/domain/config?",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -347,7 +347,7 @@
 							"raw": "{\n    \"token\":\"token\",\n    \"domains\":\"aa.qingcdn.com\",\n    \"config\": {\n        \"cache_rule\":[\n            {\n                \"type\":4,\n                \"pattern\":\"index.html,test,*.jpg,user,get?index\",\n                \"time\":3600\n            },\n            {\n                \"type\":1,\n                \"pattern\":\"avi,mp4,mpeg\",\n                \"time\":3600\n            }\n        ]\n    }\n}"
 						},
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/config?",
+							"raw": "https://cdn.api.baishan.com/v2/domain/config?",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -472,7 +472,7 @@
 							"raw": "{\n    \"token\":\"token\",\n    \"domains\":\"aa.qingcdn.com\",\n    \"config\": {\n        \"add_response_head\": {\n            \"type\":\"add\",\n            \"list\":[\n                {\n                    \"name\":\"Content-Type\", \n                    \"value\":\"text/html; charset=ISO-8859-4\"\n                },\n                {\n                    \"name\":\"Cache-Control\", \n                    \"value\":\"max-age=300, must-revalidate\"\n                }\n            ]\n        }\n    }\n}"
 						},
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/config",
+							"raw": "https://cdn.api.baishan.com/v2/domain/config",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -531,7 +531,7 @@
 							"raw": "{\n    \"token\":\"token\",\n    \"domains\":\"aa.qingcdn.com\",\n    \"config\": {\n        \"add_response_head\": {\n            \"type\":\"remove\",\n            \"list\":[\"Content-Type\",\"Cache-Control\"]\n        }\n    }\n}"
 						},
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/config",
+							"raw": "https://cdn.api.baishan.com/v2/domain/config",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -578,7 +578,7 @@
 							"raw": "{\n    \"token\":\"token\",\n    \"domains\":\"aa.qingcdn.com\",\n    \"config\": {\n        \"visit_deny_whitelist\": [\n            {\"url\":\"/user/get?index\",\"turn_on\":true},\n            {\"url\":\"/contract/get?index\",\"turn_on\":true}\n        ]\n    }\n}"
 						},
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/config",
+							"raw": "https://cdn.api.baishan.com/v2/domain/config",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -625,7 +625,7 @@
 							"raw": " {  \"token\":\"token\",\n    \"domains\":\"aa.qingcdn.com\",\n    \"config\": {\n        \"visit_deny_whitelist\": [\n            {\"url\":\"/user/get?index\",\"turn_on\":false},\n            {\"url\":\"/contract/get?index\",\"turn_on\":false}\n        ]\n    }\n}"
 						},
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/config",
+							"raw": "https://cdn.api.baishan.com/v2/domain/config",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -663,7 +663,7 @@
 							"raw": "{\n\"token\":\"token\",\"domain\":\"aa.qingcdn.com\",\"https_status\":\"1\",\"http2\":\"off\", \"force_https\":\"0\",\"certificate\":\"-----BEGIN CERTIFICATE-----\\n-----END CERTIFICATE-----\\n-----BEGIN CERTIFICATE-----\\nMIIGVjCCBT6gAwIBAgIQWBJg+y9qE2JohUL0YPZSozANBgkqhkiG9w0BAQsFADCB/nkDELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4G.../n1TKW9\\/gXCqIumJ+bTCt+tcTpB20l1TCOEQVPLC1d270jSdohhhQyLnhBon2zd\\nmrQ3hTlwbh5a7FYFNs43ngicYdcdQ1DlVpoAsPuQpVcvzs7F7kIjzsL6\\n-----END CERTIFICATE-----\", \"private_key\":\"-----BEGIN PRIVATE KEY-----\\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDC4TwXktCpY9vO\\nz3A5YuKgtK6oT6E5yVyQO080RAtXogpMVIbhYpIrjyBoauimeFKIlqW2rH97q6PP...\\n-----END PRIVATE KEY-----\"\n}\n"
 						},
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/httpsInfo",
+							"raw": "https://cdn.api.baishan.com/v2/domain/httpsInfo",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -707,7 +707,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/certificate?token=[token]&page_size=15&page_number=1",
+							"raw": "https://cdn.api.baishan.com/v2/domain/certificate?token=[token]&page_size=15&page_number=1",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -750,7 +750,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/certificate?token=[token]&cert_id=123",
+							"raw": "https://cdn.api.baishan.com/v2/domain/certificate?token=[token]&cert_id=123",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -798,7 +798,7 @@
 							"raw": "{\"cert_id\":123}"
 						},
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/certificate?token=[token]",
+							"raw": "https://cdn.api.baishan.com/v2/domain/certificate?token=[token]",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -843,7 +843,7 @@
 							"raw": "{\n    \"token\":\"token\",\n    \"domains\":\"aa.qingcdn.com\",\n    \"config\": {\n         \"https\":{\n            \"cert_id\":0\n        }\n    }\n}\n"
 						},
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/config",
+							"raw": "https://cdn.api.baishan.com/v2/domain/config",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -867,7 +867,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/domain/httpsInfo?token=[token]&domain=aa.qingcdn.com",
+					"raw": "https://cdn.api.baishan.com/v2/domain/httpsInfo?token=[token]&domain=aa.qingcdn.com",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -900,7 +900,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/domain/httpsInfo?token=[token]&domain=aa.qingcdn.com",
+							"raw": "https://cdn.api.baishan.com/v2/domain/httpsInfo?token=[token]&domain=aa.qingcdn.com",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -1008,7 +1008,7 @@
 					"raw": "{\n    \"domains\": \"aa.qingcdn.com\",\n    \"token\": \"token\",\n    \"config\": [\n        \"referer\",\n        \"remove302\"\n    ]\n}"
 				},
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/domain/config",
+					"raw": "https://cdn.api.baishan.com/v2/domain/config",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -1045,7 +1045,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/domain/config?token=[token]&domains=aa.qingcdn.com&config[]=referer&config[]=origin&config[]=ip_black_list&config[]=ip_white_list&config[]=origin_host",
+					"raw": "https://cdn.api.baishan.com/v2/domain/config?token=[token]&domains=aa.qingcdn.com&config[]=referer&config[]=origin&config[]=ip_black_list&config[]=ip_white_list&config[]=origin_host",
 					"protocol": "https",
 					"host": [
 						"api",
