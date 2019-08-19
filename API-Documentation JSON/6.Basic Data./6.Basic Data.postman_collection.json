@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/stat/log/getList?token=[token]&start_time=2019-06-09&end_time=2019-06-18&domain=aa.qingcdn.com&need_md5=1&need_size=1",
+					"raw": "https://cdn.api.baishan.com/v2/stat/log/getList?token=[token]&start_time=2019-06-09&end_time=2019-06-18&domain=aa.qingcdn.com&need_md5=1&need_size=1",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -71,7 +71,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.qingcdn.com/v2/stat/log/getList?token=[token]&start_time=2019-06-09&end_time=2019-06-18&domain=aa.qingcdn.com&need_md5=1&need_size=1",
+							"raw": "https://cdn.api.baishan.com/v2/stat/log/getList?token=[token]&start_time=2019-06-09&end_time=2019-06-18&domain=aa.qingcdn.com&need_md5=1&need_size=1",
 							"protocol": "https",
 							"host": [
 								"api",
