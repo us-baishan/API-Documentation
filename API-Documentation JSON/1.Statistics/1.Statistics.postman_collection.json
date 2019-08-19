@@ -83,7 +83,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/stat/originErrRatio?token=[token]&domain=aa.qingcdn.com&start_time=2019-06-09%2000:00&end_time=2019-06-30%2000:10",
+					"raw": "https://cdn.api.baishan.com/v2/stat/originErrRatio?token=[token]&domain=aa.qingcdn.com&start_time=2019-06-09%2000:00&end_time=2019-06-30%2000:10",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -142,7 +142,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/stat/httpcode?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09 13:00&end_time=2019-06-11 13:20",
+					"raw": "https://cdn.api.baishan.com/v2/stat/httpcode?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09 13:00&end_time=2019-06-11 13:20",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -186,7 +186,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/stat/bandwidth/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09 11:00&end_time=2019-06-20 12:00&query_area=abroad&grad=hour&stat_is_forward=1&data_type=bandwidth&ip_protocol=ipv4",
+					"raw": "https://cdn.api.baishan.com/v2/stat/bandwidth/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09 11:00&end_time=2019-06-20 12:00&query_area=abroad&grad=hour&stat_is_forward=1&data_type=bandwidth&ip_protocol=ipv4",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -261,7 +261,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/stat/originBandwidth/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-16&grad=hour&data_type=bandwidth",
+					"raw": "https://cdn.api.baishan.com/v2/stat/originBandwidth/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-16&grad=hour&data_type=bandwidth",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -316,7 +316,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/stat/originRequest/eachDomain?token=[token]&domain=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-30",
+					"raw": "https://cdn.api.baishan.com/v2/stat/originRequest/eachDomain?token=[token]&domain=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-30",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -361,7 +361,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/stat/request/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-12&grad=minute5&stat_is_forward=1",
+					"raw": "https://cdn.api.baishan.com/v2/stat/request/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-12&grad=minute5&stat_is_forward=1",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -416,7 +416,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/stat/httpcode/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-10&end_time=2019-06-30&grad=minute5&stat_is_forward=0",
+					"raw": "https://cdn.api.baishan.com/v2/stat/httpcode/eachDomain?token=[token]&domains=aa.qingcdn.com&start_time=2019-06-10&end_time=2019-06-30&grad=minute5&stat_is_forward=0",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -471,7 +471,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.qingcdn.com/v2/stat/pv/eachDomain?token=[token]&domain=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-19&grad=day&stat_is_forward=1",
+					"raw": "https://cdn.api.baishan.com/v2/stat/pv/eachDomain?token=[token]&domain=aa.qingcdn.com&start_time=2019-06-09&end_time=2019-06-19&grad=day&stat_is_forward=1",
 					"protocol": "https",
 					"host": [
 						"api",
