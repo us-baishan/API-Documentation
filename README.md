@@ -13,7 +13,7 @@ This is an intro of how to import this file on your local Postman
 <br/>Step7: Select the API request that you wanted from "**Collection**"
 
 
-## For windows users
+## For Windows users
 This is an intro of how to import this file on your local Postman
 <br/>Step1: Download Postman Link: https://www.getpostman.com/downloads/
 <br/>Step2: Download the folder on Github
