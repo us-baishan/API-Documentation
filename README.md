@@ -1,7 +1,7 @@
 # API-Documentation
 This is a built API collection from Postman according to Baishancloud API Documentation; for more information, please visit our website
 
-![baishancloud logo] (API-Documentation/logo.jpg) 
+![baishancloud logo](API-Documentation/logo.jpg) 
 
 ## For Mac users
 This is an intro of how to import this file on your local Postman
